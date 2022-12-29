@@ -1,20 +1,16 @@
 package com.sigma.sigmastore.dao;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import lombok.NoArgsConstructor;
 
-//@Service
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class GoodsDao {
 
-    int id;
-    String name;
-    double price;
-    int units;
-
-
-    public GoodsDao( String name, double price, int units) {
-    }
+	String name;
+	double price;
+	int units;
 
 }
