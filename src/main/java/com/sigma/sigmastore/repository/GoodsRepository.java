@@ -15,7 +15,7 @@ import java.util.Objects;
 public class GoodsRepository {
 
 	private final JdbcTemplate jdbcTemplate;
-	private RowMapper<Goods> rowMapper;
+	private final RowMapper<Goods> rowMapper;
 
 	public Goods getGoods(int id) {
 		return jdbcTemplate.queryForObject("select * from `sigmastore`.`goods` where `id` =? ", rowMapper, id);

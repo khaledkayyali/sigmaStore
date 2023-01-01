@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Store {
 
-	int Id;
-	String address;
+	private String name;
+	private Boolean open;
+	private String address;
+
 }

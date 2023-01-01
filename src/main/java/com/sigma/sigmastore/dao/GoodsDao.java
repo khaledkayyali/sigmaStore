@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GoodsDao {
 
-	String name;
-	double price;
-	int units;
+	private String name;
+	private double price;
+	private int units;
 
 }
