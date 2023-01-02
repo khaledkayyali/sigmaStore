@@ -8,6 +8,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Objects;
 
 @Repository
@@ -29,9 +30,7 @@ public class GoodsRepository {
 			PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO `sigmastore`.`goods` " +
 					"(`name`, `price`, `units`) " +
 					"VALUES(?, ?, ?);", new String[]{"id"});
-			preparedStatement.setString(1, goods.getName());
-			preparedStatement.setDouble(2, goods.getPrice());
-			preparedStatement.setInt(3, goods.getUnits());
+			setStatementParams(goods, preparedStatement);
 			return preparedStatement;
 		}, keyHolder);
 
@@ -44,9 +43,7 @@ public class GoodsRepository {
 			PreparedStatement preparedStatement = con.prepareStatement("UPDATE `sigmastore`.`goods` " +
 					"SET `name` = ?, `price` = ?, `units` = ? " +
 					"WHERE `id` = ?;");
-			preparedStatement.setString(1, goods.getName());
-			preparedStatement.setDouble(2, goods.getPrice());
-			preparedStatement.setInt(3, goods.getUnits());
+			setStatementParams(goods, preparedStatement);
 			preparedStatement.setInt(4, id);
 			return preparedStatement;
 		});
@@ -58,4 +55,11 @@ public class GoodsRepository {
 		jdbcTemplate.update("DELETE FROM `sigmastore`.`goods` WHERE `id`=?;", id);
 
 	}
+
+	private void setStatementParams(Goods goods, PreparedStatement preparedStatement) throws SQLException {
+		preparedStatement.setString(1, goods.getName());
+		preparedStatement.setDouble(2, goods.getPrice());
+		preparedStatement.setInt(3, goods.getUnits());
+	}
+
 }
