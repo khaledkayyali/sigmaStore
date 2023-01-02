@@ -1,24 +1,16 @@
 package com.sigma.sigmastore.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Goods {
-    int id;
-    String name;
-    double price;
-    int units;
 
-    public Goods(int id, String name, double price, int units) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.units = units;
-    }
+	private String name;
+	private double price;
+	private int units;
 
-    public Goods() {
-    }
-
-    public Goods(String name, Double price, Integer units) {
-    }
 }
