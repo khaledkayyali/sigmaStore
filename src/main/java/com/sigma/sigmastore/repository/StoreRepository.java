@@ -9,7 +9,6 @@ public class StoreRepository {
 
 	private JdbcTemplate jdbcTemplate;
 
-
 	public Store getStore(int id) {
 		return null;
 	}

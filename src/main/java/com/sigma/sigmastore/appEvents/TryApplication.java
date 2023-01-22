@@ -4,9 +4,7 @@ import com.sigma.sigmastore.domain.Goods;
 import com.sigma.sigmastore.repository.GoodsRepository;
 import org.springframework.context.event.ApplicationContextEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Component;
 
-@Component
 public class TryApplication {
 
 	private GoodsRepository goodsRepository;

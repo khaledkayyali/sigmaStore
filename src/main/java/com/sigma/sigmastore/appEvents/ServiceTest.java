@@ -5,9 +5,7 @@ import com.sigma.sigmastore.service.GoodsService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.event.ApplicationContextEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Component;
 
-@Component
 @AllArgsConstructor
 public class ServiceTest {
 
